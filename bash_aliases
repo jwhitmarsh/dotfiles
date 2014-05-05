@@ -21,12 +21,10 @@ alias whois='whois -H'
 alias xc='xclip -selection clipboard -in'
 alias xp='xclip -selection clipboard -out'
 alias xse='tail --follow=name ~/.xsession-errors -n 0'
-
 alias ls="ls --color"
 alias vi="gvim"
 alias q="exit"
 alias a="clear"
-
 alias gss="git status"
 alias gd="git diff"
 alias ga="git add -p"
@@ -35,9 +33,4 @@ alias gc="git commit"
 alias gfo="git fetch origin"
 alias gro="git rebase origin/master"
 alias gcm="git checkout master"
-alias grod="git rebase origin/development"
-alias gcd="git checkout development"
-
-alias thor="ssh -X robint@192.168.0.4"
-alias test="ssh -X robint@192.168.0.121"
 alias ra="sudo service apache2 restart"
