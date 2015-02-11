@@ -1,3 +1,10 @@
+alias gr='grunt'
+alias grr='grunt release'
+alias ni='npm install'
+alias ns='npm start'
+alias nt='npm test'
+alias gpi='git pull && npm install'
+alias smv='sudo ~/src/utility-scripts/manage-vhost.sh'
 alias apt='aptitude'
 alias dig='dig +multi'
 alias dquilt='QUILT_PATCHES=debian/patches quilt'
@@ -22,7 +29,7 @@ alias xc='xclip -selection clipboard -in'
 alias xp='xclip -selection clipboard -out'
 alias xse='tail --follow=name ~/.xsession-errors -n 0'
 alias ls="ls -G"
-alias vi="mvim"
+#alias vi="mvim"
 alias q="exit"
 alias a="clear"
 alias gss="git status"
@@ -42,3 +49,9 @@ alias gsp="gs pop"
 alias ra="sudo apachectl restart"
 alias gb="git branch"
 alias gl="git lola"
+alias gpl="git pull"
+alias gph="echo //////————— push it real good! ————///// && git push"
+alias cs="cd ~/src"
+alias consolergx="echo 'console.log(.*?);' | pbcopy"
+alias gcam=commitWithMessage
+alias zipc=zipCurrentFolder

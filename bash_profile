@@ -40,3 +40,13 @@ case $- in
 	source ~/.bashrc
 	;;
 esac
+
+function commitWithMessage() 
+{
+	git commit -a -m "$1";
+}
+
+function zipCurrentFolder()
+{
+	zip -r ${PWD##*/}.zip *;
+}
