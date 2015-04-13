@@ -73,7 +73,7 @@ set guioptions+=f
 if has ("win32")
     set guifont=DejaVu_Sans_Mono:h9
 elseif has ("mac")
-    set guifont=Menlo\ Regular:h12
+    set guifont=Monaco:h12
 else
     set guifont=Monospace\ 10
 endif
@@ -157,3 +157,5 @@ if has("gui_running")
     	autocmd BufEnter *.js nested TagbarOpen
 	end
 endif
+
+au BufRead,BufNewFile *.md set ft=markdown
