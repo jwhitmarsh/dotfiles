@@ -59,6 +59,11 @@ elif test -f /usr/local/etc/bash_completion.d/git-completion.bash; then
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 
+# django bash completion 
+if test -f /$HOME/.django_bash_completion.sh; then
+	source $HOME/.django_bash_completion.sh
+fi
+
 # best prompt ever!
 #
 function smile {
@@ -191,3 +196,6 @@ durandal)
 	alias nogba='wine ~/nogba/NO\$GBA.EXE'
 	;;
 esac
+
+export NVM_DIR="/Users/jwhitmarsh/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

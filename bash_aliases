@@ -1,3 +1,25 @@
+alias nr="npm run"
+alias jsa="jshint ."
+alias nvp="npm version patch"
+alias nvmi="npm version minor"
+alias nvmj="npm version major"
+alias gch="git checkout"
+alias emss="ember server --environment=staging"
+alias embp="ember build --environment=production"
+alias ems="ember server"
+alias emg="ember generate"
+alias nis="npm install --save"
+alias bis="bower install --save"
+alias sba='source ~/.bash_aliases'
+alias gpht='git push origin --tags'
+alias nig='npm install -g'
+alias nu='npm uninstall'
+alias nug='npm uninstall -g'
+alias grsd='grunt serve:dist'
+alias grb='grunt build'
+alias bi="bower install"
+alias grs='grunt serve'
+alias gau='git add -u'
 alias gr='grunt'
 alias grr='grunt release'
 alias ni='npm install'
@@ -44,7 +66,7 @@ alias gcm="git checkout master"
 alias grod="git rebase origin/development"
 alias gcd="git checkout development"
 alias gcb="git checkout -b"
-alias gs="git stash"
+alias gst="git stash"
 alias gsp="gs pop"
 alias ra="sudo apachectl restart"
 alias gb="git branch"
