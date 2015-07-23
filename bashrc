@@ -80,7 +80,11 @@ function user_colour {
 		printf "${csi_green}"
 	fi
 }
-
+#curl with username, url
+cgt(){
+	echo "curl -OLv --user '$1' $2"
+	curl -OLv --user $1 $2
+}
 # Git branch in prompt.
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -174,7 +178,7 @@ function rb {
 
 function exaudio {
 	ffmpeg -i "$1" -acodec copy -vn "$2"
-    }
+}
 
 #test -r /etc/bash_completion && source /etc/bash_completion
 
@@ -191,11 +195,12 @@ if test -z "$CLICOLOR"; then
 	alias ls='ls --color=auto'
 fi
 
-case $HOSTNAME in
-durandal)
-	alias nogba='wine ~/nogba/NO\$GBA.EXE'
-	;;
-esac
-
 export NVM_DIR="/Users/jwhitmarsh/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export GOPATH=~/src
+export PATH=$PATH:$GOPATH/bin
+export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
+
+echo ""
+echo "using `nvm current`"

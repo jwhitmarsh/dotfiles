@@ -1,3 +1,10 @@
+alias ami="ssh -l ec2-user -i ~/.ssh/drg-euw1-cider-development.pem  euw1a-web02.dresources.com"
+alias fl="forever list"
+alias fst="forever start"
+alias fsp="forever stop"
+alias tzxf="tar zxf"
+alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+alias gpt="git push --tags"
 alias nr="npm run"
 alias jsa="jshint ."
 alias nvp="npm version patch"
