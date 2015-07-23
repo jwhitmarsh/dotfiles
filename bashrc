@@ -22,8 +22,6 @@ export DJANGO_COLORS="light"
 
 export GREP_OPTIONS='--color=auto'
 
-export EDITOR=vim
-
 if test -n "$DISPLAY"
 then
 	BROWSER=gnome-open
@@ -199,3 +197,8 @@ esac
 
 export NVM_DIR="/Users/jwhitmarsh/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# settings for mono
+export LD_LIBRARY_PATH=/opt/mono/lib
+export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
+

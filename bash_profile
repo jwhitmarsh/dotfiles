@@ -56,6 +56,7 @@ function zipCurrentFolder()
 ##
 
 # MacPorts Installer addition on 2015-03-11_at_12:26:02: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/opt/local/bin:/opt/local/sbin:/home/ec2-user/src/keychain-2.8.1/:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+eval `keychain --eval --agents ssh id_rsa`
