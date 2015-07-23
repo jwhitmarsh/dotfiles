@@ -60,3 +60,5 @@ export PATH="/opt/local/bin:/opt/local/sbin:/home/ec2-user/src/keychain-2.8.1/:$
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 eval `keychain --eval --agents ssh id_rsa`
+export GOPATH=~/src
+export PATH=$PATH:$GOPATH/bin
