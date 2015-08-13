@@ -200,7 +200,6 @@ export NVM_DIR="/Users/jwhitmarsh/.nvm"
 
 export GOPATH=~/src
 export PATH=$PATH:$GOPATH/bin
-export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
 
 echo ""
 echo "using `nvm current`"
