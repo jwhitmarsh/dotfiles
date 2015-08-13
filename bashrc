@@ -22,8 +22,6 @@ export DJANGO_COLORS="light"
 
 export GREP_OPTIONS='--color=auto'
 
-export EDITOR=vim
-
 if test -n "$DISPLAY"
 then
 	BROWSER=gnome-open
@@ -118,69 +116,10 @@ function gvimcpp {
 	gvim $1.cpp "+new $1.h"
 }
 
-#function remotesign {
-#	set -e
-#
-#	host="$1"
-#
-#	while shift; do
-#		test -n "$1" || continue
-#
-#		data=$(ssh "$host" cat "$file")
-#		sign=$(gpg --armor --detach-sign <<< "$data")
-#		ssh "$host" cat '>' "$file.asc"
-#	done
-#}
-
-function envof {
-	file=/proc/${1:?Usage: $0 pid}/environ
-	cmd="cat $file"
-	test -r $file || cmd="sudo $cmd"
-	$cmd | tr '\0' '\n' | cat -v
-}
-
 function physize {
 	echo $(( $(stat -c '%B * %b' "$1") / 1024 )) "$1"
 }
 
-function block {
-	sudo iptables -I OUTPUT -d "$1" -j DROP
-}
-
-function batchfg {
-	foo="$(awk '{print $1}' /proc/loadavg) < 1.5"
-	while test "$(bc <<< "$foo")" = '0'; do
-		foo="$(awk '{print $1}' /proc/loadavg) < 1.5"
-		sleep 5
-	done
-	"$@"
-}
-
-#function info {
-#	gnome-open "http://localhost/cgi-bin/info2www?($1)$2"
-#}
-
-function svngrep {
-	find -name '.svn' -prune -or -exec grep "$@" {} +
-}
-
-function debskew {
-	apt-cache showsrc "$1" \
-		| grep-dctrl . --show=binary -n \
-		| tr ', ' '\n' \
-		| sort -u \
-		| xargs -r dpkg -l
-}
-
-function rb {
-	env $(envof $(pgrep rhythmbox) | grep ^DBUS_SESSION_BUS_ADDRESS=) rhythmbox-client "$@"
-}
-
-function exaudio {
-	ffmpeg -i "$1" -acodec copy -vn "$2"
-}
-
-#test -r /etc/bash_completion && source /etc/bash_completion
 
 case $- in
 *i*)
@@ -195,11 +134,20 @@ if test -z "$CLICOLOR"; then
 	alias ls='ls --color=auto'
 fi
 
-export NVM_DIR="/Users/jwhitmarsh/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+case "$(uname -s)" in
+Darwin)
+	export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
+	export NVM_DIR="/Users/$USER/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+	echo ""
+	echo "using `nvm current`"
+	;;
+esac	
+
+# settings for mono
+export LD_LIBRARY_PATH=/opt/mono/lib
+export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
 
 export GOPATH=~/src
 export PATH=$PATH:$GOPATH/bin
 
-echo ""
-echo "using `nvm current`"
