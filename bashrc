@@ -134,15 +134,6 @@ if test -z "$CLICOLOR"; then
 	alias ls='ls --color=auto'
 fi
 
-case "$(uname -s)" in
-Darwin)
-	export PAGER="col -b  | open -a /Applications/Google\ Chrome.app -f"
-	export NVM_DIR="/Users/$USER/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-	echo ""
-	echo "using `nvm current`"
-	;;
-esac	
 
 # settings for mono
 export LD_LIBRARY_PATH=/opt/mono/lib
@@ -150,4 +141,4 @@ export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
 
 export GOPATH=~/src
 export PATH=$PATH:$GOPATH/bin
-
+export PATH="/Users/jwhitmarsh/Library/Android/sdk/platform-tools/":$PATH
