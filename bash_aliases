@@ -1,3 +1,6 @@
+alias ga.="git add ."
+alias sl="storm list"
+alias e="ember"
 alias vgi="vagrant init"
 alias vgl="vagrant box list"
 alias vgu="vagrant up"
@@ -46,7 +49,6 @@ alias ns='npm start'
 alias nt='npm test'
 alias gpi='git pull && npm install'
 alias dig='dig +multi'
-alias e="$EDITOR"
 alias g=git
 alias hman='man --html=browser-pause'
 alias la='ls -al'

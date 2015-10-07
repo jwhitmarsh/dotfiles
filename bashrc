@@ -124,6 +124,7 @@ function physize {
 case $- in
 *i*)
 	source ~/.bash_aliases
+	source ~/.alias_completions
 	;;
 esac
 
@@ -134,11 +135,10 @@ if test -z "$CLICOLOR"; then
 	alias ls='ls --color=auto'
 fi
 
-
 # settings for mono
-export LD_LIBRARY_PATH=/opt/mono/lib
-export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
+# export LD_LIBRARY_PATH=/opt/mono/lib
+# export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
 
-export GOPATH=~/src
-export PATH=$PATH:$GOPATH/bin
-export PATH="/Users/jwhitmarsh/Library/Android/sdk/platform-tools/":$PATH
+# export GOPATH=~/src
+# export PATH=$PATH:$GOPATH/bin
+# export PATH="/Users/jwhitmarsh/Library/Android/sdk/platform-tools/":$PATH

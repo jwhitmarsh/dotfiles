@@ -6,6 +6,10 @@
 
 export PATH=$PATH:$HOME/bin
 
+export PATH=$PATH:$HOME/.rvm/scripts/rvm
+
+source "$HOME/.rvm/scripts/rvm"
+
 test -f ~/.pythonrc && export PYTHONSTARTUP=$HOME/.pythonrc
 
 case "$(uname -s)" in
