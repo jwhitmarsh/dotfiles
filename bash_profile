@@ -49,5 +49,5 @@ function zipCurrentFolder()
 # Your previous /Users/jwhitmarsh/.bash_profile file was backed up as /Users/jwhitmarsh/.bash_profile.macports-saved_2015-03-11_at_12:26:02
 ##
 
-export GOPATH=~/src
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/work
+export PATH=$GOPATH/bin:$PATH
