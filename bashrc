@@ -17,6 +17,7 @@ shopt -s cdspell
 #shopt -s failglob
 shopt -s histverify
 shopt -s no_empty_cmd_completion
+shopt -s extglob
 
 export DJANGO_COLORS="light"
 
@@ -142,3 +143,17 @@ fi
 # export GOPATH=~/src
 # export PATH=$PATH:$GOPATH/bin
 # export PATH="/Users/jwhitmarsh/Library/Android/sdk/platform-tools/":$PATH
+
+LTS="$(n --lts)"
+CURRENT="$(node -v)"
+GREEN='\033[01;32m'
+RED='\033[01;31m'
+NONE='\033[00m'
+
+if [ $LTS = ${CURRENT/v/} ]; then
+	echo -e "${GREEN}node is up to date with LTS: $LTS. go team!"
+else
+	echo -e "${RED}node is behind LTS. please update to $LTS"
+	echo ""
+    echo -e "   ${NONE}sudo n $LTS"
+fi

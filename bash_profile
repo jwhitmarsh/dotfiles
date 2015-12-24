@@ -51,3 +51,4 @@ function zipCurrentFolder()
 
 export GOPATH=$HOME/work
 export PATH=$GOPATH/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
