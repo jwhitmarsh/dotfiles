@@ -35,14 +35,15 @@ case $- in
 	;;
 esac
 
-function commitWithMessage() 
-{
-	git commit -a -m "$1";
-}
 
 function zipCurrentFolder()
 {
 	zip -r ${PWD##*/}.zip *;
+}
+
+function ggl()
+{
+	open http://google.co.uk/search?q="$1"
 }
 
 ##

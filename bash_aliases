@@ -1,3 +1,9 @@
+alias nig="npm i -g"
+alias ncug="npm-check -gu"
+alias ncu="npm-check -u"
+alias gdb="git describe"
+alias el="eslint"
+alias bo="brew outdated"
 alias ..='cd ..'
 alias ...='cd ../../'
 alias a='clear'
