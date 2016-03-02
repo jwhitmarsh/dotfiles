@@ -1,3 +1,5 @@
+alias j="fasd_cd -d"
+alias jj="fasd_cd -d -i"
 alias nig="npm i -g"
 alias ncug="npm-check -gu"
 alias ncu="npm-check -u"
@@ -6,7 +8,7 @@ alias el="eslint"
 alias bo="brew outdated"
 alias ..='cd ..'
 alias ...='cd ../../'
-alias a='clear'
+alias c='clear'
 alias bi='bower install'
 alias bis='bower install --save'
 alias consolergx='echo '\''console.log(.*?);'\'' | pbcopy'
