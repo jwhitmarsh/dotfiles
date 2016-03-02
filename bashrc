@@ -138,8 +138,7 @@ fi
 
 # settings for mono
 # export LD_LIBRARY_PATH=/opt/mono/lib
-# export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfig
-
+# export PKG_CONFIG_PATH=/opt/mono/lib/pkgconfig:/usr/lib64/pkgconfi
 # export GOPATH=~/src
 # export PATH=$PATH:$GOPATH/bin
 # export PATH="/Users/jwhitmarsh/Library/Android/sdk/platform-tools/":$PATH
@@ -149,11 +148,24 @@ CURRENT="$(node -v)"
 GREEN='\033[01;32m'
 RED='\033[01;31m'
 NONE='\033[00m'
+TODAY=$(date '+%y-%m-%d')
 
-if [ $LTS = ${CURRENT/v/} ]; then
-	echo -e "${GREEN}node is up to date with LTS: $LTS. go team!"
-else
-	echo -e "${RED}node is behind LTS. please update to $LTS"
-	echo ""
-    echo -e "   ${NONE}sudo n $LTS"
+if [ ! -f /tmp/${TODAY} ]; then
+	if [ $LTS = ${CURRENT/v/} ]; then
+		echo -e "${GREEN}node is up to date with LTS: $LTS. go team!"
+	else
+		echo -e "${RED}node is behind LTS. please update to $LTS"
+		echo ""
+		echo -e "   ${NONE}sudo n $LTS"
+	fi
+	touch /tmp/${TODAY}
 fi
+
+export ABACUS_DEPLOYMENT_KEY=~/.ssh/drg-euw1-abacus-team.pem
+
+fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+	  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
