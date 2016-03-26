@@ -27,8 +27,11 @@ alias rsync='rsync -h'
 alias rvm-restart='rvm_reload_flag=1 source '\''/Users/jwhitmarsh/.rvm/scripts/rvm'\'''
 alias sba='source ~/.bash_aliases'
 alias sl='storm list'
-alias t='top -o cpu'
+alias t='htop'
+alias top='htop'
 alias whois='whois -H'
+alias o='open'
+alias df='df -h'
 
 # dev
 ## bower
