@@ -58,7 +58,7 @@ elif test -f /usr/local/etc/bash_completion.d/git-completion.bash; then
 	source /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
 
-# django bash completion 
+# django bash completion
 if test -f /$HOME/.django_bash_completion.sh; then
 	source $HOME/.django_bash_completion.sh
 fi
@@ -162,10 +162,12 @@ if [ ! -f /tmp/${TODAY} ]; then
 fi
 
 export ABACUS_DEPLOYMENT_KEY=~/.ssh/drg-euw1-abacus-team.pem
+export LAMP_DEPLOYMENT_KEY=~/.ssh/drg-euw1-cider-development.pem
+export CIRCLE_TEST_REPORTS=/tmp/
 
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-	  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+eval "$(fasd --init auto)"
+
+if [ -f ~/src/bash-sensible/sensible.bash ]; then
+	source ~/src/bash-sensible/sensible.bash
 fi
-source "$fasd_cache"
-unset fasd_cache
+export _FASD_SINK="$HOME/.fasd.log"
