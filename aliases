@@ -24,7 +24,6 @@ alias p='ping'
 alias ping='ping -n'
 alias q='exit'
 alias rsync='rsync -h'
-alias rvm-restart='rvm_reload_flag=1 source '\''/Users/jwhitmarsh/.rvm/scripts/rvm'\'''
 alias sba='source ~/.bash_aliases'
 alias sl='storm list'
 alias t='htop'
@@ -32,6 +31,7 @@ alias top='htop'
 alias whois='whois -H'
 alias o='open'
 alias df='df -h'
+alias i='itermocil'
 
 # dev
 ## bower
@@ -57,8 +57,9 @@ alias fst='forever start'
 
 ## git (sooo much git)
 alias g='git'
+alias ga='git add'
 alias gaa='git add .'
-alias ga='git add -p'
+alias gap='git add -p'
 alias gau='git add -u'
 alias gb='git branch'
 alias gc='git commit'

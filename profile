@@ -1,6 +1,6 @@
 # .bash_profile is sourced for a login shell.
 # my .xsessionrc sources it, so place in here 'session' type configuration.
-# 
+#
 # <http://lists.gnu.org/archive/html/bug-bash/2005-01/msg00263.html> is a good
 # explanation of this insanity. Also <http://lkml.org/lkml/2005/4/25/205>.
 
@@ -35,21 +35,4 @@ case $- in
 	;;
 esac
 
-
-function zipCurrentFolder()
-{
-	zip -r ${PWD##*/}.zip *;
-}
-
-function ggl()
-{
-	open http://google.co.uk/search?q="$1"
-}
-
-##
-# Your previous /Users/jwhitmarsh/.bash_profile file was backed up as /Users/jwhitmarsh/.bash_profile.macports-saved_2015-03-11_at_12:26:02
-##
-
-export GOPATH=$HOME/work
-export PATH=$GOPATH/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
