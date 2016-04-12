@@ -10,16 +10,20 @@ alias dl="cd ~/Downloads"
 alias dk="cd ~/Desktop"
 
 # utilities
+alias at='atom'
 alias c='clear'
 alias consolergx='echo '\''console.log(.*?);'\'' | pbcopy'
 alias cyclewifi='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
+alias df='df -h'
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 alias hman='man --html=browser-pause'
+alias i='itermocil'
 alias j="fasd_cd -d"
 alias jj="fasd_cd -d -i"
 alias la='ls -alh'
 alias ls='ls -G1'
 alias mkdir='mkdir -pv'
+alias o='open'
 alias p='ping'
 alias ping='ping -n'
 alias q='exit'
@@ -29,9 +33,7 @@ alias sl='storm list'
 alias t='htop'
 alias top='htop'
 alias whois='whois -H'
-alias o='open'
-alias df='df -h'
-alias i='itermocil'
+
 
 # dev
 ## bower
@@ -106,6 +108,7 @@ alias ni='npm install'
 alias nibi='ni && bi'
 alias nig="npm i -g"
 alias nis='npm install --save'
+alias nk='npm-check'
 alias nr='npm run'
 alias ns='npm start'
 alias nu='npm uninstall'
