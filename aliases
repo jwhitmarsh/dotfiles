@@ -33,7 +33,7 @@ alias sl='storm list'
 alias t='htop'
 alias top='htop'
 alias whois='whois -H'
-
+alias pg='pgcli'
 
 # dev
 ## bower
@@ -80,7 +80,8 @@ alias gph='echo //////————— push it real good! ————///// && gi
 alias gpl='git pull'
 alias gpt='git push && git push --tags'
 alias grc='git rebase --continue'
-alias grh='git reset --hard HEAD'
+alias grh='git reset HEAD'
+alias grhh='git reset --hard HEAD'
 alias gro='git rebase origin/master'
 alias grod='git rebase origin/development'
 alias gsp='gs pop'
