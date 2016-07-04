@@ -17,7 +17,7 @@ alias cyclewifi='networksetup -setairportpower en0 off; networksetup -setairport
 alias df='df -h'
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 alias hman='man --html=browser-pause'
-alias i='itermocil'
+alias i='itermocil --here'
 alias j="fasd_cd -d"
 alias jj="fasd_cd -d -i"
 alias la='ls -alh'
@@ -97,7 +97,10 @@ alias grs='grunt serve'
 alias grsd='grunt serve:dist'
 
 ## gulp
-alias gp='gulp'
+alias gu='gulp'
+alias gur='gulp release'
+alias gul='gulp lint'
+alias gub='gulp build'
 
 ## jshint
 alias jsa='jshint .'
