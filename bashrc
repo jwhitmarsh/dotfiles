@@ -27,9 +27,13 @@ then
 else
 	BROWSER=w3m
 fi
-export BROWSER
 
+LP_PS1_POSTFIX="\n> "
+
+export BROWSER
+export EDITOR="atom -nw"
 export PAGER=less
+
 #export LESS='-icRFS'
 command -v lesspipe &>/dev/null && eval "$(lesspipe)"
 # see termcap(5) for an explanation of these codes
@@ -122,3 +126,6 @@ if [ -f ~/src/bash-sensible/sensible.bash ]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# direnv must come after EVERYTHING
+eval "$(direnv hook bash)"
