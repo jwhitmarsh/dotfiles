@@ -226,7 +226,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>2385 573 606 456 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 152 1920 905 1920 0 1920 1057 </string>
+	<string>-1440 -78 1440 877 -1440 -78 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1736 -89 1249 945 -1920 -93 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -684,7 +684,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Monaco 12</string>
+			<string>Monaco 11</string>
 			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -2142,7 +2142,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>03FC858D-A116-4391-944B-1FEB53E0942D</string>
 	<key>NoSyncLastTipTime</key>
-	<real>485248592.57614499</real>
+	<real>486893639.547023</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -2209,6 +2209,17 @@
 		<string>0048</string>
 		<string>0049</string>
 		<string>0050</string>
+		<string>0051</string>
+		<string>0052</string>
+		<string>0053</string>
+		<string>0054</string>
+		<string>0055</string>
+		<string>0056</string>
+		<string>0057</string>
+		<string>0058</string>
+		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -2278,7 +2289,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-18T08:28:42Z</date>
+	<date>2016-05-24T14:58:12Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
