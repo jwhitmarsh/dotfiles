@@ -35,10 +35,13 @@ case $- in
 	;;
 esac
 
+# sbin
 export PATH="/usr/local/sbin:$PATH"
 
+# iTerm shell integration
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+# Powerline
 function _update_ps1() {
     PS1="$(~/powerline-shell.py $? 2> /dev/null)"
 }

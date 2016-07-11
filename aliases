@@ -20,8 +20,8 @@ alias hman='man --html=browser-pause'
 alias i='itermocil --here'
 alias j="fasd_cd -d"
 alias jj="fasd_cd -d -i"
-alias la='ls -alh'
-alias ls='ls -G1'
+alias la='ls -Alh'
+alias ls='ls -AG1'
 alias mkdir='mkdir -pv'
 alias o='open'
 alias p='ping'
