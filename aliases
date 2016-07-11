@@ -14,6 +14,7 @@ alias at='atom'
 alias c='clear'
 alias consolergx='echo '\''console.log(.*?);'\'' | pbcopy'
 alias cyclewifi='networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
+alias da='direnv allow'
 alias df='df -h'
 alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
 alias hman='man --html=browser-pause'
@@ -22,9 +23,11 @@ alias j="fasd_cd -d"
 alias jj="fasd_cd -d -i"
 alias la='ls -Alh'
 alias ls='ls -AG1'
+alias md='macdown'
 alias mkdir='mkdir -pv'
 alias o='open'
 alias p='ping'
+alias pg='pgcli'
 alias ping='ping -n'
 alias q='exit'
 alias rsync='rsync -h'
@@ -33,7 +36,6 @@ alias sl='storm list'
 alias t='htop'
 alias top='htop'
 alias whois='whois -H'
-alias pg='pgcli'
 
 # dev
 ## bower
