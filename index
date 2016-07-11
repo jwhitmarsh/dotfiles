@@ -1,0 +1,102 @@
+---
+taps:
+- caskroom/cask
+- gapple/services
+- homebrew/core
+- rstacruz/backup
+- tomanthony/brews
+
+brew:
+- ack 2.14
+- autoconf 2.69
+- automake 1.15
+- bash 4.3.42 4.3.46
+- bash-completion 1.3_1
+- boost 1.57.0 1.58.0 1.59.0 1.60.0 1.60.0_1 1.60.0_2
+- cairo 1.14.6_1
+- cmake 3.5.0 3.5.1 3.5.2 3.6.0
+- czmq 3.0.2_1 3.0.2_3
+- direnv 2.8.1
+- dnsmasq 2.75 2.76
+- duplicity 0.7.06_1 0.7.07.1 0.7.08
+- eot-utils 1.1
+- fasd 1.0.1
+- flyway 4.0.1 4.0.3
+- fontconfig 2.11.1_2 2.11.1_3
+- fontforge 20160404
+- freetype 2.6.3 2.6.4
+- gdbm 1.11 1.12
+- geoip 1.6.9
+- gettext 0.19.7 0.19.8.1
+- git 2.4.0 2.6.0 2.6.4 2.7.0 2.7.1 2.7.2 2.7.3 2.7.4 2.8.1 2.8.2_1 2.8.3 2.8.4 2.9.0
+- glew 1.13.0
+- glib 2.46.2 2.48.1
+- glm 0.9.7.4
+- gmp 6.1.1
+- gnu-sed 4.2.2
+- gnupg 1.4.20
+- gnutls 3.4.13 3.4.14
+- gobject-introspection 1.46.0_1 1.48.0
+- gource 0.43_3
+- harfbuzz 1.2.6 1.2.7
+- htop-osx 0.8.2.8
+- icu4c 57.1
+- itermocil 0.1.8 0.2.1
+- jasper 1.900.1
+- jenv 0.4.4
+- jpeg 8d
+- leptonica 1.72 1.73
+- lftp 4.6.5
+- libffi 3.0.13
+- libgpg-error 1.20_1 1.21 1.22 1.23
+- libksba 1.3.3 1.3.4
+- libpng 1.6.21 1.6.23
+- librsync 2.0.0_1
+- libsodium 1.0.10
+- libssh2 1.7.0
+- libtasn1 4.8
+- libtiff 4.0.6 4.0.6_1
+- libtool 2.4.6
+- libyaml 0.1.6_1
+- mongodb 3.0.2 3.0.6 3.2.0 3.2.1 3.2.3 3.2.4 3.2.6 3.2.7
+- mono64 3.4.0
+- mysql 5.6.26 5.7.10 5.7.11 5.7.12 5.7.13 5.7.9
+- ncdu 1.11
+- netpbm 10.68
+- nettle 3.2
+- nginx 1.10.0 1.10.1 1.8.0 1.8.1
+- nmap 7.12
+- node 0.12.2_1 5.0.0 5.2.0 5.4.1_1 5.5.0
+- openssl 1.0.2a-1 1.0.2c 1.0.2d_1 1.0.2e 1.0.2e_1 1.0.2f 1.0.2g 1.0.2h_1
+- pango 1.38.1 1.40.1
+- parallel 20151222 20160122 20160422 20160522 20160622
+- passenger 5.0.26 5.0.28 5.0.29
+- pcre 8.38 8.39
+- pgcli 0.20.1 1.0.0
+- phantomjs 2.1.1
+- pixman 0.34.0
+- pkg-config 0.29.1
+- popt 1.16
+- postgresql 9.5.2 9.5.3
+- python 2.7.11 2.7.12
+- qemu 2.6.0
+- readline 6.3.8
+- ren 1.0
+- rename 1.600
+- s-lang 2.3.0
+- samba 3.6.25
+- sdl2 2.0.4
+- sdl2_image 2.0.1_1
+- sqlite 3.10.0 3.10.1 3.10.2 3.11.0 3.11.0_1 3.12.0 3.12.2 3.13.0 3.8.11.1 3.8.9 3.9.2
+- stormssh 0.6.7
+- the_silver_searcher 0.31.0 0.32.0
+- tree 1.7.0
+- unixodbc 2.3.4
+- webp 0.5.0 0.5.1
+- wget 1.17.1 1.18
+- xz 5.2.2
+- zeromq 4.1.4 4.1.5
+
+cask:
+- macdown 0.6
+- xquartz 2.7.7
