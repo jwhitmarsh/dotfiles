@@ -17,7 +17,7 @@
 	default = simple
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)' --abbrev-commit --date=relative
+	lola = log --graph --pretty=format:'%Cred%h%Creset %s -%C(yellow)%d%Creset %C(dim magenta)%an%Creset' --abbrev-commit --date=format:'%b %d %H:%M'
 [color]
 	branch = auto
 	diff = auto
