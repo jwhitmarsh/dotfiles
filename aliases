@@ -43,7 +43,7 @@ alias bi='bower install'
 alias bis='bower install --save'
 
 ## brew
-alias bo="brew outdated"
+alias bo="brew update && brew outdated"
 
 ## ember
 alias e='ember'
