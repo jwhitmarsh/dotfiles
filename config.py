@@ -1,0 +1,1 @@
+/Users/jwhitmarsh/src/powerline-shell/config.py
