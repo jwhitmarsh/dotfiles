@@ -227,8 +227,12 @@
 	<string>382 367 1184 313 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>2818 601 606 456 1920 0 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1920 1057 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>2189 83 796 473 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>89 55 1655 1002 0 0 1920 1057 </string>
+	<string>2115 52 1816 987 1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1736 -89 1249 945 -1920 -93 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2339,6 +2343,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/jwhitmarsh/src/dotfiles/iTerm</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2358,7 +2364,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-01T14:11:06Z</date>
+	<date>2016-08-05T11:05:14Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>

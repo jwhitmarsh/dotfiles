@@ -1,0 +1,7 @@
+windows:
+  - name: 'covis'
+    root: ~/src
+    layout: 3_columns
+    panes:
+      - cd covariate-visualiser-ui; c;
+      - cd covariate-visualiser-api; c;

@@ -2,7 +2,10 @@
 
 # taps
 brew tap gapple/services
+brew tap homebrew/boneyard
+brew tap homebrew/bundle
 brew tap homebrew/core
+brew tap neovim/neovim
 brew tap rstacruz/backup
 brew tap tomanthony/brews
 
@@ -17,6 +20,7 @@ brew install cairo
 brew install cmake
 brew install czmq
 brew install direnv
+brew install dirmngr
 brew install dnsmasq
 brew install duplicity
 brew install eot-utils
@@ -35,9 +39,11 @@ brew install glm
 brew install gmp
 brew install gnu-sed
 brew install gnupg
+brew install gnupg2
 brew install gnutls
 brew install gobject-introspection
 brew install gource
+brew install gpg-agent
 brew install harfbuzz
 brew install htop-osx
 brew install icu4c
@@ -47,7 +53,9 @@ brew install jenv
 brew install jpeg
 brew install leptonica
 brew install lftp
+brew install libassuan
 brew install libffi
+brew install libgcrypt
 brew install libgpg-error
 brew install libksba
 brew install libpng
@@ -57,6 +65,8 @@ brew install libssh2
 brew install libtasn1
 brew install libtiff
 brew install libtool
+brew install libusb
+brew install libusb-compat
 brew install libyaml
 brew install mongodb
 brew install mono64
@@ -74,10 +84,12 @@ brew install passenger
 brew install pcre
 brew install pgcli
 brew install phantomjs
+brew install pinentry
 brew install pixman
 brew install pkg-config
 brew install popt
 brew install postgresql
+brew install pth
 brew install python
 brew install qemu
 brew install readline
@@ -88,6 +100,7 @@ brew install samba
 brew install sdl2
 brew install sdl2_image
 brew install sqlite
+brew install ssed
 brew install stormssh
 brew install the_silver_searcher
 brew install tree

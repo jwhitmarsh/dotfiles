@@ -1,7 +1,5 @@
 # .bashrc is sourced for an interactive shell.
 
-#echo .bashrc
-
 # For some reason, openssh invokes bash as an interactive shell even if we
 # are only using scp. Therefore check that we have a terminal before processing
 # this file
@@ -66,12 +64,12 @@ HISTSIZE=5000
 
 # xterm/screen title
 #
-case "$TERM" in
-xterm*|rxvt*|screen)
-	# http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#ss3.1
-	PROMPT_COMMAND='printf "\033]0;${HOSTNAME%%.*}:${PWD/#$HOME/~}\a"'
-	;;
-esac
+# case "$TERM" in
+# xterm*|rxvt*|screen)
+# 	# http://www.faqs.org/docs/Linux-mini/Xterm-Title.html#ss3.1
+# 	PROMPT_COMMAND='printf "\033]0;${HOSTNAME%%.*}:${PWD/#$HOME/~}\a"'
+# 	;;
+# esac
 
 function gvimcpp {
 	gvim $1.cpp "+new $1.h"
@@ -79,6 +77,26 @@ function gvimcpp {
 
 function physize {
 	echo $(( $(stat -c '%B * %b' "$1") / 1024 )) "$1"
+}
+
+# run `postgres service=db-alias`
+# makes use of connection aliases saved in ~/.pg_service.conf
+# example: `pgs db-alias-name`
+function pgs {
+  if [[ -z "$1" ]]; then
+    echo "A connection alias is required!"
+    return 1
+  fi
+
+  if [[ -z `command -v pgcli >/dev/null` ]]; then
+    CLI=pgcli
+  elif [[ -z `command -v psql >/dev/null` ]]; then
+    CLI=psql
+  else
+    echo "No postgres CLI tool found. Try pgcli or psql"
+  fi
+
+  $CLI service=$1
 }
 
 case $- in

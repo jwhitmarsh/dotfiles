@@ -1,0 +1,8 @@
+windows:
+  - name: 'bcg'
+    root: ~/src
+    layout: 3_columns
+    panes:
+      - cd bcg-domain; c
+      - cd bcg-api; c
+      - cd bcg-ui; c

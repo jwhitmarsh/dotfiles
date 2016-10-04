@@ -68,6 +68,7 @@ alias gau='git add -u'
 alias gb='git branch'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gcae='git commit --amend --no-edit'
 alias gd='git diff'
 alias gdb="git describe"
 alias gfo='git fetch origin'

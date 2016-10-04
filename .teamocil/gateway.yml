@@ -1,0 +1,7 @@
+windows:
+  - name: 'gateway'
+    root: ~/src
+    layout: 3_columns
+    panes:
+      - cd vgc-gateway-domain; c
+      - cd vgc-gateway-api; c

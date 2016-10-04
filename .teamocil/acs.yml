@@ -1,0 +1,8 @@
+windows:
+  - name: 'acs'
+    root: ~/src
+    layout: 3_columns
+    panes:
+      - cd acs-domain; c
+      - cd acs-api; c
+      - cd acs-ui; c
