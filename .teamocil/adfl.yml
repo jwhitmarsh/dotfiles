@@ -1,0 +1,8 @@
+windows:
+  - name: 'adfl'
+    root: ~/src
+    layout: 3_columns
+    panes:
+      - cd adfl/adfl-domain; c; direnv allow
+      - cd adfl/adfl-api; c; direnv allow
+      - cd adfl/adfl-ng; c

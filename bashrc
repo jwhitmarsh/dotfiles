@@ -80,8 +80,9 @@ function physize {
 }
 
 # run `postgres service=db-alias`
-# makes use of connection aliases saved in ~/.pg_service.conf
+# requires connection aliases saved in ~/.pg_service.conf
 # example: `pgs db-alias-name`
+# bonus: tab completion :)
 function pgs {
   if [[ -z "$1" ]]; then
     echo "A connection alias is required!"
@@ -98,6 +99,30 @@ function pgs {
 
   $CLI service=$1
 }
+
+_pgs()
+{
+  filename="$HOME/.pg_service.conf"
+  CONNECTIONS=""
+  while read -r line
+  do
+      if [[ $line == [* ]]; then
+        CONNECTIONS+=$(echo $line | sed 's/[][]//g')
+        CONNECTIONS+=' '
+      fi
+  done < "$filename"
+
+  local cur prev
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  COMPREPLY=( $(compgen -W "${CONNECTIONS}" -- ${cur}) )
+
+  return 0
+}
+complete -F _pgs pgs
+#
+# END OF PGS
+#
 
 case $- in
 *i*)
@@ -147,3 +172,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # direnv must come after EVERYTHING
 eval "$(direnv hook bash)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
