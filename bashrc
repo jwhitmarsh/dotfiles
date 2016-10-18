@@ -29,7 +29,7 @@ fi
 LP_PS1_POSTFIX="\n> "
 
 export BROWSER
-export EDITOR="atom -nw"
+export EDITOR=vim
 export PAGER=less
 
 #export LESS='-icRFS'

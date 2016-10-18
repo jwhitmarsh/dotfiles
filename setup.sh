@@ -26,11 +26,10 @@ then
 fi
 
 ln -s $WITHFORCE $HERE/bashrc $BASHRC
-ln -s $WITHFORCE $HERE/aliases $ALIASES
+ln -s $WITHFORCE $HERE/aliases.sh $ALIASES
 ln -s $WITHFORCE $HERE/profile $PROFILE
 ln -s $WITHFORCE $HERE/liquidpromptrc $LIQUIDPROMPT
 ln -s $WITHFORCE $HERE/gitconfig $GITCONFIG
 ln -s $WITHFORCE $HERE/gitmessage $GITMESSAGE
 ln -s $WITHFORCE $HERE/gitignore_global $GITIGNOREGLOBAL
-ln -s $WITHFORCE $HERE/gitconfig ~/nowhere
 echo 'Done'
