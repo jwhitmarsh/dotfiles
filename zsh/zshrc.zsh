@@ -7,11 +7,11 @@ source $(brew --prefix)/share/antigen/antigen.zsh
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="$(tput setaf 5)❯ "
+POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%F{magenta}❯ %f"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version time)
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-stash git-tagname)
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='yellow'
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 
@@ -71,20 +71,16 @@ _pgs()
   CONNECTIONS=""
   while read -r line
   do
-      if [[ $line == [* ]]; then
-        CONNECTIONS+=$(echo $line | sed 's/[][]//g')
-        CONNECTIONS+=' '
+      if [[ $line == \[* ]]; then
+        compadd $(echo $line | sed 's/[][]//g')
       fi
   done < "$filename"
 
-  local cur prev
-  COMPREPLY=()
-  cur="${COMP_WORDS[COMP_CWORD]}"
-  COMPREPLY=( $(compgen -W "${CONNECTIONS}" -- ${cur}) )
-
   return 0
 }
-complete -F _pgs pgs
+compdef _pgs pgs
 #
 # END OF PGS
 #
+
+eval "$(direnv hook zsh)"
