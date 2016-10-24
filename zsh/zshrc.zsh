@@ -1,3 +1,6 @@
+# autocd
+setopt autocd
+
 export GREP_OPTIONS='--color=auto'
 
 # load antigen
@@ -24,7 +27,10 @@ antigen bundle osx
 antigen bundle aws
 antigen bundle capistrano
 antigen bundle brew
+antigen bundle brew-cask
 antigen bundle bower
+antigen bundle sudo
+antigen bundle robertzk/send.zsh
 
 # load theme
 antigen theme bhilburn/powerlevel9k powerlevel9k
@@ -88,3 +94,6 @@ compdef _pgs pgs
 #
 
 eval "$(direnv hook zsh)"
+
+# has to go last!
+antigen bundle zsh-users/zsh-syntax-highlighting
