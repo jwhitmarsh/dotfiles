@@ -3,6 +3,6 @@ windows:
     root: ~/src
     layout: 3_columns
     panes:
-      - cd gvd-domain; c; direnv allow
-      - cd gvd-api; c; direnv allow
-      - cd gvd-ui; c
+      - cd igvd-domain; c; direnv allow
+      - cd igvd-api; c; direnv allow
+      - cd igvd-ui; c

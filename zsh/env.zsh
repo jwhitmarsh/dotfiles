@@ -1,0 +1,1 @@
+export CIRCLE_TEST_REPORTS=/tmp
