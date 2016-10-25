@@ -31,6 +31,11 @@ antigen bundle brew-cask
 antigen bundle bower
 antigen bundle sudo
 antigen bundle robertzk/send.zsh
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle vasyharan/zsh-brew-services
+
+# plugins worth investigation... later
+# https://github.com/unixorn/tumult.plugin.zsh
 
 # load theme
 antigen theme bhilburn/powerlevel9k powerlevel9k

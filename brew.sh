@@ -11,6 +11,7 @@ brew tap tomanthony/brews
 
 # packages
 brew install ack
+brew install antigen
 brew install autoconf
 brew install automake
 brew install bash
@@ -33,6 +34,7 @@ brew install gdbm
 brew install geoip
 brew install gettext
 brew install git
+brew install git-extras
 brew install glew
 brew install glib
 brew install glm
@@ -51,6 +53,7 @@ brew install itermocil
 brew install jasper
 brew install jenv
 brew install jpeg
+brew install jq
 brew install leptonica
 brew install lftp
 brew install libassuan
@@ -68,6 +71,7 @@ brew install libtool
 brew install libusb
 brew install libusb-compat
 brew install libyaml
+brew install maven
 brew install mongodb
 brew install mono64
 brew install mysql
@@ -77,11 +81,13 @@ brew install nettle
 brew install nginx
 brew install nmap
 brew install node
+brew install oniguruma
 brew install openssl
 brew install pango
 brew install parallel
 brew install passenger
 brew install pcre
+brew install peco
 brew install pgcli
 brew install phantomjs
 brew install pinentry
@@ -95,6 +101,7 @@ brew install qemu
 brew install readline
 brew install ren
 brew install rename
+brew install ruby
 brew install s-lang
 brew install samba
 brew install sdl2
@@ -108,4 +115,6 @@ brew install unixodbc
 brew install webp
 brew install wget
 brew install xz
+brew install yarn
 brew install zeromq
+brew install zsh
