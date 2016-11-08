@@ -210,7 +210,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>322</string>
+		<string>307</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -230,9 +230,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>2189 139 606 456 1920 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>154 229 796 473 0 0 1440 877 </string>
+	<string>213 262 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1 4 1438 873 0 0 1440 877 </string>
+	<string>0 18 1435 859 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1736 -89 1249 945 -1920 -93 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -733,7 +733,7 @@
 			<key>Name</key>
 			<string>jwhitmarsh</string>
 			<key>Non Ascii Font</key>
-			<string>MesloLGL-RegularForPowerline 11</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
@@ -2214,6 +2214,10 @@
 	<real>487239817.21065003</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncSuppressAnnyoingBellOffer</key>
@@ -2368,7 +2372,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-20T12:02:10Z</date>
+	<date>2016-10-24T12:56:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2429,7 +2433,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.8</string>
+	<string>3.0.10</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
