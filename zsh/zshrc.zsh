@@ -1,3 +1,7 @@
+# global npm modules
+export PATH="$HOME/.npm-packages/bin:$PATH"
+
+
 # autocd
 setopt autocd
 
@@ -38,7 +42,8 @@ antigen bundle vasyharan/zsh-brew-services
 # https://github.com/unixorn/tumult.plugin.zsh
 
 # load theme
-antigen theme bhilburn/powerlevel9k powerlevel9k
+# antigen theme bhilburn/powerlevel9k powerlevel9k
+source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 antigen apply
 
@@ -51,7 +56,7 @@ source "$fasd_cache"
 unset fasd_cache
 
 # load npm completions
-source /usr/local/etc/bash_completion.d/npm
+# source ~/.npm-completion.sh
 
 # load aliases
 source ~/.zshaliases.zsh
@@ -101,4 +106,4 @@ compdef _pgs pgs
 eval "$(direnv hook zsh)"
 
 # has to go last!
-antigen bundle zsh-users/zsh-syntax-highlighting
+# antigen bundle zsh-users/zsh-syntax-highlighting
