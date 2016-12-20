@@ -1,6 +1,10 @@
 # global npm modules
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
+# key bindings
+bindkey "^[[3~" delete-char
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 
 # autocd
 setopt autocd
