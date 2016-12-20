@@ -25,7 +25,7 @@ alias guu="gulp unit-test"
 alias ni="npm i"
 alias ns="npm start"
 alias nr="npm run"
-alias ncu="npm-check -ue"
+alias nu="npm-check -ue"
 
 # git
 alias g='git'
@@ -88,3 +88,6 @@ alias gstp='git stash pop'
 alias gsts='git stash show --text'
 alias glt="git describe --abbrev=0 --tags"
 alias grh='git reset HEAD'
+
+# fasd
+alias fls='fasd -d -e "ls -AG1"'
