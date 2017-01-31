@@ -3,7 +3,7 @@ alias c="clear"
 alias q="exit"
 
 # utilities
-alias la="ls -al"
+alias la="ls -alh"
 alias da="direnv allow"
 alias ls="ls -AG1"
 alias pg="pgcli"
@@ -26,6 +26,9 @@ alias ni="npm i"
 alias ns="npm start"
 alias nr="npm run"
 alias nu="npm-check -ue"
+alias bi="bower install"
+alias bis="bower install --save"
+alias bu="bower uninstall"
 
 # git
 alias g='git'

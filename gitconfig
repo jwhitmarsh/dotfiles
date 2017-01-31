@@ -6,6 +6,7 @@
 	email = jwhitmarsh@dresources.com
 [core]
 	excludesfile = /Users/jwhitmarsh/.gitignore_global
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
