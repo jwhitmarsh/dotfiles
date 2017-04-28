@@ -61,7 +61,9 @@ antigen bundle sudo
 antigen bundle robertzk/send.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle vasyharan/zsh-brew-services
-antigen bundle jwhitmarsh/zsh-tab-title
+# antigen bundle jwhitmarsh/zsh-tab-title
+antigen bundle /Users/jwhitmarsh/src/zsh-tab-title --no-local-clone
+# antigen bundle lukechilds/zsh-better-npm-completion
 
 # plugins worth investigation... later
 # https://github.com/unixorn/tumult.plugin.zsh
@@ -81,7 +83,7 @@ source "$fasd_cache"
 unset fasd_cache
 
 # load npm completions
-# source ~/.npm-completion.sh
+source ~/.npm-completion
 
 # load aliases
 source ~/.zshaliases.zsh
@@ -110,22 +112,23 @@ function pgs {
   $CLI service=$1
 }
 
-_pgs()
-{
-  filename="$HOME/.pg_service.conf"
-  CONNECTIONS=""
-  while read -r line
-  do
-      if [[ $line == \[* ]]; then
-        compadd $(echo $line | sed 's/[][]//g')
-      fi
-  done < "$filename"
+  _pgs()
+  {
+    filename="$HOME/.pg_service.conf"
+    CONNECTIONS=""
+    while read -r line
+    do
+        if [[ $line == \[* ]]; then
+          compadd $(echo $line | sed 's/[][]//g')
+        fi
+    done < "$filename"
 
-  return 0
-}
-compdef _pgs pgs
+    return 0
+  }
+  compdef _pgs pgs
 #
 # END OF PGS
 #
 
 eval "$(direnv hook zsh)"
+export PATH="/usr/local/sbin:$PATH"

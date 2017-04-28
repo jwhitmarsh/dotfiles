@@ -31,3 +31,7 @@
 	helper = osxkeychain
 [commit]
 	template = /Users/jwhitmarsh/.gitmessage
+[mergetool]
+	keepBackup = false
+[sequence]
+	editor = rebase-editor

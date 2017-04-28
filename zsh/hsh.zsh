@@ -14,6 +14,11 @@ alias j="fasd_cd -d"
 alias jj="fasd_cd -d -i"
 alias i='itermocil --here'
 alias v='f -e vim' # quick opening files with vim
+alias ad='d -e atom'
+alias af='f -e atom'
+alias tk='task'
+alias tkl='task list'
+alias tka='task add'
 
 # gulp
 alias gu="gulp"
@@ -29,6 +34,7 @@ alias nu="npm-check -ue"
 alias bi="bower install"
 alias bis="bower install --save"
 alias bu="bower uninstall"
+alias nrb="npm run build"
 
 # git
 alias g='git'
@@ -63,7 +69,8 @@ alias gitke='\gitk --all $(git log -g --pretty=%h)'
 compdef _git gke='gitk'
 
 alias gpl='git pull'
-alias gl="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
+alias gl="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gla="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all"
 
 
 alias gm='git merge'
