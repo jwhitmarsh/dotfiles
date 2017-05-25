@@ -79,6 +79,7 @@ alias gmt='git mergetool --no-prompt'
 
 alias gp='git push'
 alias gpd='git push --dry-run'
+alias gptags='git push && git push --tags'
 
 alias grb='git rebase'
 alias gra='git rebase --abort'
@@ -101,3 +102,4 @@ alias grh='git reset HEAD'
 
 # fasd
 alias fls='fasd -d -e "ls -AG1"'
+alias tim='/usr/bin/time -p'
