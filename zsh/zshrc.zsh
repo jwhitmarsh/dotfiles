@@ -1,6 +1,11 @@
 # global npm modules
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
+# global gem files
+export GEM_HOME=~/.gem
+export GEM_PATH=~/.gem
+export ZSH_CUSTOM=~/.zsh_custom
+
 # key bindings
 bindkey "^[[3~" delete-char
 bindkey  "^[[H"   beginning-of-line
@@ -34,6 +39,10 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # load antigen
 source $(brew --prefix)/share/antigen/antigen.zsh
 
+# spaceship
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_DOCKER_SHOW=false
+
 # powerlevel setup
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -62,15 +71,17 @@ antigen bundle robertzk/send.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle vasyharan/zsh-brew-services
 # antigen bundle jwhitmarsh/zsh-tab-title
-antigen bundle /Users/jwhitmarsh/src/zsh-tab-title --no-local-clone
+# antigen bundle /Users/jwhitmarsh/src/zsh-tab-title --no-local-clone
 # antigen bundle lukechilds/zsh-better-npm-completion
+
+antigen use oh-my-zsh
 
 # plugins worth investigation... later
 # https://github.com/unixorn/tumult.plugin.zsh
 
 # load theme
 # antigen theme bhilburn/powerlevel9k powerlevel9k
-source  ~/powerlevel9k/powerlevel9k.zsh-theme
+# source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 antigen apply
 
@@ -130,5 +141,9 @@ function pgs {
 # END OF PGS
 #
 
-eval "$(direnv hook zsh)"
 export PATH="/usr/local/sbin:$PATH"
+
+source "$ZSH_CUSTOM/spaceship.zsh-theme"
+ZSH_THEME="spaceship"
+
+eval "$(direnv hook zsh)"
