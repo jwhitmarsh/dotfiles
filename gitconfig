@@ -18,6 +18,8 @@
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --pretty=format:'%Cred%h%Creset %s -%C(yellow)%d%Creset %C(dim magenta)%an%Creset' --abbrev-commit --date=format:'%b %d %H:%M'
+	conflicts = diff --name-only --diff-filter=U
+	tagdiff = "!git log --pretty=oneline --abbrev-commit $(git describe --abbrev=0 --tags $(git describe --abbrev=0)^)...$(git describe --abbrev=0)"
 [color]
 	branch = auto
 	diff = auto
