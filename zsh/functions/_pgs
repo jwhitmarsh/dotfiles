@@ -1,0 +1,17 @@
+#compdef pgs
+
+_pgs()
+{
+  filename="$HOME/.pg_service.conf"
+  CONNECTIONS=""
+  while read -r line
+  do
+    if [[ $line == \[* ]]; then
+      compadd $(echo $line | sed 's/[][]//g')
+    fi
+  done < "$filename"
+
+  return 0
+}
+
+_pgs "$@"

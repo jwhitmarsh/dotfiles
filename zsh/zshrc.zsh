@@ -1,3 +1,5 @@
+autoload -Uz compinit && compinit
+
 # global npm modules
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
@@ -36,9 +38,6 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# load antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
-
 # spaceship
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_DOCKER_SHOW=false
@@ -54,12 +53,16 @@ POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-# POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='black'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='white'
-# POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='white'
 
-# antigen bundles osx aws capistrano z bower brew
+# update fpath before loading antigen (which calls `autoload compinit` etc)
+fpath=(~/.zsh/functions $fpath)
+autoload -Uz pgs
+
+# load antigen
+source $(brew --prefix)/share/antigen/antigen.zsh
+
 antigen bundle osx
 antigen bundle aws
 antigen bundle capistrano
@@ -70,25 +73,14 @@ antigen bundle sudo
 antigen bundle robertzk/send.zsh
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle vasyharan/zsh-brew-services
-# antigen bundle jwhitmarsh/zsh-tab-title
-# antigen bundle /Users/jwhitmarsh/src/zsh-tab-title --no-local-clone
-# antigen bundle lukechilds/zsh-better-npm-completion
-
 antigen use oh-my-zsh
-
-# plugins worth investigation... later
-# https://github.com/unixorn/tumult.plugin.zsh
-
-# load theme
-# antigen theme bhilburn/powerlevel9k powerlevel9k
-# source  ~/powerlevel9k/powerlevel9k.zsh-theme
 
 antigen apply
 
 # fasd set up
 fasd_cache="$HOME/.fasd-init-bash"
 if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-	  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
+  fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install >| "$fasd_cache"
 fi
 source "$fasd_cache"
 unset fasd_cache
@@ -101,45 +93,6 @@ source ~/.zshaliases.zsh
 
 # some env vars
 export CIRCLE_TEST_REPORTS=/tmp
-
-# run `postgres service=db-alias`
-# requires connection aliases saved in ~/.pg_service.conf
-# example: `pgs db-alias-name`
-# bonus: tab completion :)
-function pgs {
-  if [[ -z "$1" ]]; then
-    echo "A connection alias is required!"
-    return 1
-  fi
-
-  if [[ -z `command -v pgcli >/dev/null` ]]; then
-    CLI=pgcli
-  elif [[ -z `command -v psql >/dev/null` ]]; then
-    CLI=psql
-  else
-    echo "No postgres CLI tool found. Try pgcli or psql"
-  fi
-
-  $CLI service=$1
-}
-
-  _pgs()
-  {
-    filename="$HOME/.pg_service.conf"
-    CONNECTIONS=""
-    while read -r line
-    do
-        if [[ $line == \[* ]]; then
-          compadd $(echo $line | sed 's/[][]//g')
-        fi
-    done < "$filename"
-
-    return 0
-  }
-  compdef _pgs pgs
-#
-# END OF PGS
-#
 
 export PATH="/usr/local/sbin:$PATH"
 

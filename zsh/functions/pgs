@@ -1,0 +1,22 @@
+# run `postgres service=db-alias`
+# requires connection aliases saved in ~/.pg_service.conf
+# example: `pgs db-alias-name`
+# bonus: tab completion :)
+function pgs {
+  if [[ -z "$1" ]]; then
+    echo "A connection alias is required!"
+    return 1
+  fi
+
+  if [[ -z `command -v pgcli >/dev/null` ]]; then
+    CLI=pgcli
+    elif [[ -z `command -v psql >/dev/null` ]]; then
+    CLI=psql
+  else
+    echo "No postgres CLI tool found. Try pgcli or psql"
+  fi
+
+  $CLI service=$1
+}
+
+pgs "$@"
