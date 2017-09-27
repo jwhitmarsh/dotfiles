@@ -37,3 +37,5 @@
 	keepBackup = false
 [sequence]
 	editor = rebase-editor
+[interactive]
+	diffFilter = "diff-so-fancy"
