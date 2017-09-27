@@ -6,7 +6,9 @@ alias q="exit"
 alias la="ls -alh"
 alias da="direnv allow"
 alias ls="ls -AG1"
+alias lc="colorls -l -a"
 alias pg="pgcli"
+alias pgd='pg "$DB_NAME"'
 alias sl="storm list"
 alias t="top"
 alias top="htop"
@@ -19,6 +21,8 @@ alias af='f -e atom'
 alias tk='task'
 alias tkl='task list'
 alias tka='task add'
+alias typora="open -a typora"
+alias typ="open -a typora"
 
 # gulp
 alias gu="gulp"
