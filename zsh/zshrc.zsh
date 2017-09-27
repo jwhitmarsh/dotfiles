@@ -1,29 +1,50 @@
-autoload -Uz compinit && compinit
 
-# global npm modules
-export PATH="$HOME/.npm-packages/bin:$PATH"
+typeset -F SECONDS=0
+export START_TIME=$SECONDS
 
-# global gem files
-export GEM_HOME=~/.gem
-export GEM_PATH=~/.gem
-export ZSH_CUSTOM=~/.zsh_custom
+if [ -e ~/.profiling ]; then
+  echo "zshrc started"
 
-# key bindings
-bindkey "^[[3~" delete-char
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
+  source() {
+    local before=$SECONDS
+    . $*
+    local duration=$((($SECONDS - $before) * 1000))
+    echo "$(printf '%7.2f' $duration)ms $*"
+  }
+fi
 
-# autocd
+# zmodload zsh/zprof
+
+# load completions
+# autoload -Uz compinit && compinit
+zmodload -i zsh/complist
+
+# completion options
 setopt autocd
+# setopt hash_list_all            # hash everything before completion
+# setopt completealiases          # complete alisases
+setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word
+setopt complete_in_word         # allow completion from within a word/phrase
+setopt correct                  # spelling correction for commands
+setopt list_ambiguous           # complete as much of a completion until it gets ambiguous.
 
-# pretty grep
-export GREP_OPTIONS='--color=auto'
+zstyle ':completion:*' verbose yes
+zstyle ':completion::complete:*' use-cache on               # completion caching, use rehash to clear
+zstyle ':completion:::clap:*' use-cache on
+zstyle ':completion:::npm:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache              # cache path
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
+# zstyle ':completion:*' menu select=2                        # menu if nb items > 2
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
+zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+
+# load npm completions
+source ~/.npm-completion
 
 # history options
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
 SAVEHIST=10000000
-
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
@@ -38,44 +59,48 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-# spaceship
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_DOCKER_SHOW=false
+# global npm modules & whatever is in sbin
+export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
-# powerlevel setup
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX="%F{magenta}❯ %f"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status node_version time)
-POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-stash git-tagname)
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='black'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='white'
+# global gem files
+export GEM_HOME=~/.gem
+export GEM_PATH=~/.gem
 
-# update fpath before loading antigen (which calls `autoload compinit` etc)
-fpath=(~/.zsh/functions $fpath)
-autoload -Uz pgs
+# some env vars
+export CIRCLE_TEST_REPORTS=/tmp
+export ZSH_CUSTOM=~/.zsh_custom
 
-# load antigen
-source $(brew --prefix)/share/antigen/antigen.zsh
+# key bindings
+bindkey "^[[3~" delete-char
+bindkey  "^[[H"   beginning-of-line # page up
+bindkey  "^[[F"   end-of-line # page down
 
-antigen bundle osx
-antigen bundle aws
-antigen bundle capistrano
-antigen bundle brew
-antigen bundle brew-cask
-antigen bundle bower
-antigen bundle sudo
-antigen bundle robertzk/send.zsh
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle vasyharan/zsh-brew-services
-antigen use oh-my-zsh
+# pretty grep
+export GREP_OPTIONS='--color=auto'
 
-antigen apply
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
+# zplug "plugins/aws", from:oh-my-zsh NOTE: removed because it's too slow
+zplug "plugins/capistrano",   from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
+zplug "plugins/brew", from:oh-my-zsh
+zplug "plugins/brew-cask", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+zplug "zsh-users/zsh-autosuggestions"
+zplug "themes/robbyrussell", from:oh-my-zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load && autoload -Uz compinit && compinit
 
 # fasd set up
 fasd_cache="$HOME/.fasd-init-bash"
@@ -85,18 +110,42 @@ fi
 source "$fasd_cache"
 unset fasd_cache
 
-# load npm completions
-source ~/.npm-completion
-
 # load aliases
 source ~/.zshaliases.zsh
 
-# some env vars
-export CIRCLE_TEST_REPORTS=/tmp
+# init direnv
+eval "$(direnv hook zsh)";
 
-export PATH="/usr/local/sbin:$PATH"
 
-source "$ZSH_CUSTOM/spaceship.zsh-theme"
-ZSH_THEME="spaceship"
+# spaceship
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_DOCKER_SHOW=false
+export SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  host
+  dir
+  git
+  package
+  node
+  ruby
+  xcode
+  swift
+  golang
+  php
+  rust
+  julia
+  docker
+  venv
+  pyenv
+  line_sep
+  vi_mode
+  char
+)
+source "/Users/jwhitmarsh/.zsh_custom/themes/spaceship.zsh-theme"
 
-eval "$(direnv hook zsh)"
+# zprof
+
+# show total load time
+duration=$((($SECONDS - $START_TIME) * 1000))
+echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
