@@ -7,6 +7,7 @@
 [core]
 	excludesfile = /Users/jwhitmarsh/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	askpass = /usr/libexec/git-core/git-gui--askpass
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -30,7 +31,6 @@
 	smudge = git-lfs smudge %f
 	required = true
 [credential]
-	helper = osxkeychain
 [commit]
 	template = /Users/jwhitmarsh/.gitmessage
 [mergetool]
@@ -39,3 +39,5 @@
 	editor = rebase-editor
 [interactive]
 	diffFilter = "diff-so-fancy"
+[credential]
+	helper = cache

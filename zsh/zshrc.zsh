@@ -79,6 +79,8 @@ bindkey  "^[[F"   end-of-line # page down
 # pretty grep
 export GREP_OPTIONS='--color=auto'
 
+
+
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
@@ -89,7 +91,34 @@ zplug "plugins/brew", from:oh-my-zsh
 zplug "plugins/brew-cask", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
-zplug "themes/robbyrussell", from:oh-my-zsh
+# zplug "themes/robbyrussell", from:oh-my-zsh
+zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+
+# spaceship
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_DOCKER_SHOW=false
+SPACESHIP_PROMPT_ORDER=(
+  time
+  user
+  host
+  dir
+  git
+  package
+  node
+  ruby
+  xcode
+  swift
+  # golang
+  php
+  rust
+  julia
+  docker
+  venv
+  pyenv
+  line_sep
+  vi_mode
+  char
+)
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -117,32 +146,7 @@ source ~/.zshaliases.zsh
 eval "$(direnv hook zsh)";
 
 
-# spaceship
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_DOCKER_SHOW=false
-export SPACESHIP_PROMPT_ORDER=(
-  time
-  user
-  host
-  dir
-  git
-  package
-  node
-  ruby
-  xcode
-  swift
-  golang
-  php
-  rust
-  julia
-  docker
-  venv
-  pyenv
-  line_sep
-  vi_mode
-  char
-)
-source "/Users/jwhitmarsh/.zsh_custom/themes/spaceship.zsh-theme"
+
 
 # zprof
 

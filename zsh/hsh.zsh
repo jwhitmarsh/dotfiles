@@ -85,7 +85,7 @@ alias gp='git push'
 alias gpd='git push --dry-run'
 alias gptags='git push && git push --tags'
 
-alias grb='git rebase'
+alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias gri='git rebase -i'
