@@ -79,7 +79,8 @@ bindkey  "^[[F"   end-of-line # page down
 # pretty grep
 export GREP_OPTIONS='--color=auto'
 
-
+fpath=(~/.zsh/functions $fpath)		
+autoload -Uz pgs
 
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -144,9 +145,6 @@ source ~/.zshaliases.zsh
 
 # init direnv
 eval "$(direnv hook zsh)";
-
-
-
 
 # zprof
 
