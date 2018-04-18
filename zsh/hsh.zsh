@@ -24,21 +24,24 @@ alias tka='task add'
 alias typora="open -a typora"
 alias typ="open -a typora"
 
-# gulp
-alias gu="gulp"
-alias gub="gu build"
-alias gur="gulp release "
-alias guu="gulp unit-test"
-
 # npm
-alias ni="npm i"
-alias ns="npm start"
-alias nr="npm run"
-alias nu="npm-check -ue"
-alias bi="bower install"
-alias bis="bower install --save"
-alias bu="bower uninstall"
-alias nrb="npm run build"
+alias ni="yarn i"
+alias ns="yarn start"
+alias nr="yarn run"
+alias nu="yarn upgrade-interactive --latest"
+alias nrb="yarn run build"
+
+# yarn
+alias yi="yarn install"
+alias ya="yarn add"
+alias ys="yarn start"
+alias yr="yarn run"
+alias yu="yarn upgrade-interactive --latest"
+
+# bower
+# alias bi="bower install"
+# alias bis="bower install --save"
+# alias bu="bower uninstall"
 
 # git
 alias g='git'
@@ -104,6 +107,11 @@ alias gsts='git stash show --text'
 alias glt="git describe --abbrev=0 --tags"
 alias grh='git reset HEAD'
 
+alias gcp="git cherry-pick"
+
 # fasd
 alias fls='fasd -d -e "ls -AG1"'
 alias tim='/usr/bin/time -p'
+
+alias flushdns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
+

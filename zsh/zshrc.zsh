@@ -37,6 +37,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
 # zstyle ':completion:*' menu select=2                        # menu if nb items > 2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
 # load npm completions
 source ~/.npm-completion
@@ -62,6 +63,7 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 # global npm modules & whatever is in sbin
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export LIQUIBASE_HOME=/usr/local/opt/liquibase/libexec
 
 # global gem files
 export GEM_HOME=~/.gem
@@ -79,7 +81,7 @@ bindkey  "^[[F"   end-of-line # page down
 # pretty grep
 export GREP_OPTIONS='--color=auto'
 
-fpath=(~/.zsh/functions $fpath)		
+fpath=(~/.zsh/functions $fpath)
 autoload -Uz pgs
 
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -151,3 +153,19 @@ eval "$(direnv hook zsh)";
 # show total load time
 duration=$((($SECONDS - $START_TIME) * 1000))
 echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
+
+# date_now="`date +%Y%m%d%H%M%S`";
+# time_now="`date +%Y%m%d%H%M%S`";
+
+function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
+zle -N unix_ts
+bindkey "^t" unix_ts
+
+function git_commit_message {
+  BUFFER="git commit -m \"\""
+  zle end-of-line
+  end=$CURSOR
+  CURSOR=$(($end - 1))
+}
+zle -N git_commit_message
+bindkey "^G" git_commit_message

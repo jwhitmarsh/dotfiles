@@ -8,6 +8,7 @@
 	excludesfile = /Users/jwhitmarsh/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	askpass = /usr/libexec/git-core/git-gui--askpass
+	hooksPath = /Users/jwhitmarsh/.git_hooks
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
