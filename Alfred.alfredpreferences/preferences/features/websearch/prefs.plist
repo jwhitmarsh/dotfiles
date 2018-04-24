@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>29F9BBC9-74BE-4FC6-9A25-BEAE6755D344</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>keyword</key>
+			<string>gh</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>GitHub</string>
+			<key>url</key>
+			<string>http://github.com/{query}</string>
+			<key>utf8</key>
+			<false/>
+		</dict>
+		<key>2ACABCEB-0FEB-4D2F-9C93-2118272BB6EF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ghd</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>GitHub /dresources</string>
+			<key>url</key>
+			<string>http://github.com/dresources/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>83196203-3849-4128-847B-5D3F7E14FB73</key>
+		<dict>
+			<key>enabled</key>
+			<false/>
+			<key>keyword</key>
+			<string>syn</string>
+			<key>text</key>
+			<string>thesaurus.com</string>
+			<key>url</key>
+			<string>http://www.thesaurus.com/browse/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>F4C46948-ABB2-46B7-91A5-C30B5FC1FC4D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>goodreads</string>
+			<key>text</key>
+			<string>Goodreads</string>
+			<key>url</key>
+			<string>https://www.goodreads.com/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

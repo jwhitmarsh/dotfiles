@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Currency Converter</name>
+  <version>0.93</version>
+  <bundle>net.exit4web.currencyconverter</bundle>
+  <updated>1458609291</updated>
+  <file>currency.converter.alfredworkflow</file>
+</workflow>
