@@ -764,7 +764,7 @@
 	gAKACoAN0xAJChEVGVdOUy5rZXlzoxITFIADgASABaMWFxiABoAHgAiACVpJZGVudGlm
 	aWVyVVdpZHRoVkhpZGRlblEwI0BowAAAAAAACNIhIiMkWiRjbGFzc25hbWVYJGNsYXNz
 	ZXNcTlNEaWN0aW9uYXJ5oiMlWE5TT2JqZWN00xAJCicrGaMSExSAA4AEgAWjLC0YgAuA
-	DIAIgAlRMSNAdKAAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
+	DIAIgAlRMSNAc7AAAAAAANIhIjM0Xk5TTXV0YWJsZUFycmF5ozM1JVdOU0FycmF5XxAP
 	TlNLZXllZEFyY2hpdmVy0Tg5VUFycmF5gAEACAARABoAIwAtADIANwBGAEwAUQBcAGMA
 	ZgBoAGoAbABzAHsAfwCBAIMAhQCJAIsAjQCPAJEAnACiAKkAqwC0ALUAugDFAM4A2wDe
 	AOcA7gDyAPQA9gD4APwA/gEAAQIBBAEGAQ8BFAEjAScBLwFBAUQBSgAAAAAAAAIBAAAA
@@ -796,9 +796,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>-1321 108 606 469 -1440 -78 1440 878 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>262 252 796 473 0 0 1440 878 </string>
+	<string>150 193 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1440 -78 1440 878 -1440 -78 1440 878 </string>
+	<string>-1425 -78 1438 878 -1440 -78 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>-1736 -89 1249 945 -1920 -93 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_0DB068FB-364E-42AB-896F-792BCE6FE900</key>
@@ -3062,7 +3062,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-13T07:11:22Z</date>
+	<date>2018-04-15T10:20:46Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -3120,6 +3120,8 @@
 	<string>/-+\~_.</string>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
