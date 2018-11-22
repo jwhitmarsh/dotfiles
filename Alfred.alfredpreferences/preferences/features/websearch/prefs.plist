@@ -37,7 +37,7 @@
 		<key>83196203-3849-4128-847B-5D3F7E14FB73</key>
 		<dict>
 			<key>enabled</key>
-			<false/>
+			<true/>
 			<key>keyword</key>
 			<string>syn</string>
 			<key>text</key>
