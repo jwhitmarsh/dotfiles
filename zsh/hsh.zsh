@@ -8,7 +8,18 @@ alias da="direnv allow"
 alias ls="ls -AG1"
 alias lc="colorls -l -a"
 alias pg="pgcli"
-alias pgd='pg "$DB_NAME"'
+function pgd() {
+	if [[ "$DB_NAME" ]]; then
+		pgcli $DB_NAME
+	elif [[ "$DBNAME" ]]; then
+		pgcli $DBNAME
+	else
+		echo "no $DB_NAME or $DBNAME"
+	fi
+}
+alias cat="bat" # cat is better than bat
+
+
 alias sl="storm list"
 alias t="top"
 alias top="htop"
@@ -18,6 +29,7 @@ alias i='itermocil --here'
 alias v='f -e vim' # quick opening files with vim
 alias ad='d -e code'
 alias af='f -e code'
+alias fm="mv -v"
 alias tk='task'
 alias tkl='task list'
 alias tka='task add'
@@ -27,6 +39,7 @@ alias typ="open -a typora"
 # npm
 alias ni="yarn i"
 alias ns="yarn start"
+alias nsd="yarn start:dev" #nest js specific
 alias nr="yarn run"
 alias nu="yarn upgrade-interactive --latest"
 alias nrb="yarn run build"
@@ -35,6 +48,7 @@ alias nrb="yarn run build"
 alias yi="yarn install"
 alias ya="yarn add"
 alias ys="yarn start"
+alias ysd="yarn start:dev" #nest js specific
 alias yr="yarn run"
 alias yu="yarn upgrade-interactive --latest"
 
@@ -108,6 +122,7 @@ alias glt="git describe --abbrev=0 --tags"
 alias grh='git reset HEAD'
 
 alias gcp="git cherry-pick"
+alias ghb='hub browse'
 
 # fasd
 alias fls='fasd -d -e "ls -AG1"'
@@ -115,3 +130,4 @@ alias tim='/usr/bin/time -p'
 
 alias flushdns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
 
+alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
