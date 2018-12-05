@@ -1,51 +1,35 @@
-
-typeset -F SECONDS=0
-export START_TIME=$SECONDS
-
-if [ -e ~/.profiling ]; then
-  echo "zshrc started"
-
-  source() {
-    local before=$SECONDS
-    . $*
-    local duration=$((($SECONDS - $before) * 1000))
-    echo "$(printf '%7.2f' $duration)ms $*"
-  }
-fi
-
 # zmodload zsh/zprof
 
-# load completions
-# autoload -Uz compinit && compinit
-zmodload -i zsh/complist
+# zmodload -i zsh/complist
 
 # completion options
 setopt autocd
-# setopt hash_list_all            # hash everything before completion
-# setopt completealiases          # complete alisases
+setopt hash_list_all            # hash everything before completion
+setopt completealiases          # complete alisases
 setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word
 setopt complete_in_word         # allow completion from within a word/phrase
 setopt correct                  # spelling correction for commands
 setopt list_ambiguous           # complete as much of a completion until it gets ambiguous.
 
 zstyle ':completion:*' verbose yes
-zstyle ':completion::complete:*' use-cache on               # completion caching, use rehash to clear
-zstyle ':completion:::clap:*' use-cache on
-zstyle ':completion:::npm:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache              # cache path
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
-# zstyle ':completion:*' menu select=2                        # menu if nb items > 2
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
-zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
-zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
+# zstyle ':completion::complete:*' use-cache on               # completion caching, use rehash to clear
+# zstyle ':completion:::clap:*' use-cache on
+# zstyle ':completion:::npm:*:' use-cache on
+# zstyle ':completion:::scripts:*:*' file-patterns use-cache on
+# zstyle ':completion:*' cache-path ~/.zsh/cache              # cache path
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
+# zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+# zstyle ':completion:*:*:*:*:processes' command "ps -u `whoami` -o pid,user,comm -w -w"
 
-# load npm completions
-source ~/.npm-completion
 
-# history options
+# # load npm completions
+# # source ~/.npm-completion
+
+# # # history options
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000000
-SAVEHIST=10000000
+# HISTSIZE=10_000
+# SAVEHIST=10000
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
@@ -62,23 +46,26 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 # global npm modules & whatever is in sbin
 export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
 export LIQUIBASE_HOME=/usr/local/opt/liquibase/libexec
 
 # global gem files
-export GEM_HOME=~/.gem
-export GEM_PATH=~/.gem
+# export GEM_HOME=~/.gem
+# export GEM_PATH=~/.gem
 
-# some env vars
+# # some env vars
 export CIRCLE_TEST_REPORTS=/tmp
 export ZSH_CUSTOM=~/.zsh_custom
 
-# key bindings
+# # key bindings
 bindkey "^[[3~" delete-char
 bindkey  "^[[H"   beginning-of-line # page up
 bindkey  "^[[F"   end-of-line # page down
 
-# pretty grep
+# # pretty grep
 export GREP_OPTIONS='--color=auto'
 
 fpath=(~/.zsh/functions $fpath)
@@ -87,15 +74,13 @@ autoload -Uz pgs
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-# zplug "plugins/aws", from:oh-my-zsh NOTE: removed because it's too slow
-zplug "plugins/capistrano",   from:oh-my-zsh
-zplug "plugins/osx", from:oh-my-zsh
-zplug "plugins/brew", from:oh-my-zsh
-zplug "plugins/brew-cask", from:oh-my-zsh
+# zplug "plugins/capistrano",   from:oh-my-zsh
+# zplug "plugins/osx", from:oh-my-zsh
+# zplug "plugins/brew", from:oh-my-zsh
+# zplug "plugins/brew-cask", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 zplug "zsh-users/zsh-autosuggestions"
-# zplug "themes/robbyrussell", from:oh-my-zsh
-zplug denysdovhan/spaceship-zsh-theme, use:spaceship.zsh, from:github, as:theme
+zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 
 # spaceship
 SPACESHIP_TIME_SHOW=true
@@ -108,16 +93,16 @@ SPACESHIP_PROMPT_ORDER=(
   git
   package
   node
-  ruby
-  xcode
-  swift
+  # ruby
+  # xcode
+  # swift
   # golang
-  php
-  rust
-  julia
-  docker
-  venv
-  pyenv
+  # php
+  # rust
+  # julia
+  # docker
+  # venv
+  # pyenv
   line_sep
   vi_mode
   char
@@ -130,9 +115,6 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-
-# Then, source plugins and add commands to $PATH
-zplug load && autoload -Uz compinit && compinit
 
 # fasd set up
 fasd_cache="$HOME/.fasd-init-bash"
@@ -148,24 +130,43 @@ source ~/.zshaliases.zsh
 # init direnv
 eval "$(direnv hook zsh)";
 
-# zprof
+# # show total load time
+# duration=$((($SECONDS - $START_TIME) * 1000))
+# echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
 
-# show total load time
-duration=$((($SECONDS - $START_TIME) * 1000))
-echo "\033[1;30m($(printf '%.2f' $duration)ms)\033[0m"
+# # date_now="`date +%Y%m%d%H%M%S`";
+# # time_now="`date +%Y%m%d%H%M%S`";
 
-# date_now="`date +%Y%m%d%H%M%S`";
-# time_now="`date +%Y%m%d%H%M%S`";
+# function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
+# zle -N unix_ts
+# bindkey "^t" unix_ts
 
-function unix_ts { LBUFFER="${LBUFFER}$(date '+%Y%m%d%H%M%S')" }
-zle -N unix_ts
-bindkey "^t" unix_ts
+# function git_commit_message {
+#   BUFFER="git commit -m \"\""
+#   zle end-of-line
+#   end=$CURSOR
+#   CURSOR=$(($end - 1))
+# }
 
-function git_commit_message {
-  BUFFER="git commit -m \"\""
-  zle end-of-line
-  end=$CURSOR
-  CURSOR=$(($end - 1))
-}
-zle -N git_commit_message
-bindkey "^G" git_commit_message
+# zle -N git_commit_message
+# bindkey "^G" git_commit_message
+
+# if [ $ITERM_SESSION_ID ]; then
+#   DISABLE_AUTO_TITLE="true"
+#   echo -ne "\033];${PWD##*/}\007"
+# fi
+
+# precmd() {
+#   echo -ne "\033];${PWD##*/}\007"
+# }
+
+# Then, source plugins and add commands to $PATH
+zplug load
+
+autoload -Uz compinit
+
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C

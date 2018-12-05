@@ -51,3 +51,5 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+export ANDROID_HOME=/usr/local/share/android-sdk
+export JAVA_HOME=/Library/Java/Home
