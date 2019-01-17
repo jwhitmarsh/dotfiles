@@ -16,6 +16,6 @@ function pgs
 		echo "No postgres CLI tool found. Try pgcli or psql"
 	end
 
-	eval $CLI service=$1
+	eval "$CLI service=$argv"
 end
 # pgs "$@"
