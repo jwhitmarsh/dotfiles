@@ -9,7 +9,7 @@
 			<key>Git</key>
 			<dict>
 				<key>date</key>
-				<date>2019-01-29T16:14:19Z</date>
+				<date>2019-05-20T11:02:03Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -30,7 +30,7 @@
 			<key>HTTP_Status_Codes</key>
 			<dict>
 				<key>date</key>
-				<date>2018-07-08T15:48:02Z</date>
+				<date>2019-05-20T11:02:03Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -75,7 +75,7 @@
 			<key>nestjs/nest</key>
 			<dict>
 				<key>date</key>
-				<date>2019-05-20T11:01:12Z</date>
+				<date>2019-05-20T11:02:53Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -146,7 +146,7 @@
 			<key>NodeJS_Online</key>
 			<dict>
 				<key>date</key>
-				<date>2019-03-08T09:12:43Z</date>
+				<date>2019-05-20T11:02:15Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -172,7 +172,7 @@
 			<key>Kotlin</key>
 			<dict>
 				<key>date</key>
-				<date>2018-11-24T15:44:51Z</date>
+				<date>2019-05-20T11:02:16Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -229,107 +229,107 @@
 			<key>http://kapeli.com/feeds/AWS_JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-26T09:17:44Z</date>
+				<date>2019-05-20T11:02:23Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Bash.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:20:07Z</date>
+				<date>2019-05-20T11:02:06Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Bootstrap_3.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:20:12Z</date>
+				<date>2019-05-20T11:02:04Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/CSS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:20:28Z</date>
+				<date>2019-05-20T11:02:21Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Chai.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:20:16Z</date>
+				<date>2019-05-20T11:02:29Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/EmberJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2015-08-05T09:45:32Z</date>
+				<date>2019-05-20T11:02:24Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Emmet.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-13T08:35:02Z</date>
+				<date>2019-05-20T11:02:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Express.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:20:58Z</date>
+				<date>2019-05-20T11:02:04Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Font_Awesome.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:21:04Z</date>
+				<date>2019-05-20T11:02:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-10T10:05:20Z</date>
+				<date>2019-05-20T11:03:13Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lo-Dash.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-12T07:48:42Z</date>
+				<date>2019-05-20T11:02:10Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Man_Pages.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:21:31Z</date>
+				<date>2019-05-20T11:02:31Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Markdown.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:22:21Z</date>
+				<date>2019-05-20T11:02:26Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Mocha.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:22:23Z</date>
+				<date>2019-05-20T11:02:12Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/MomentJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-12-07T10:23:05Z</date>
+				<date>2019-05-20T11:02:18Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Nginx.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:22:28Z</date>
+				<date>2019-05-20T11:02:14Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/NodeJS.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2015-08-05T12:36:21Z</date>
+				<date>2019-05-20T11:02:17Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/PostgreSQL.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-16T15:54:49Z</date>
+				<date>2019-05-20T11:02:26Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Sass.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:22:43Z</date>
+				<date>2019-05-20T11:02:17Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Spring_Framework.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-11-07T16:00:56Z</date>
+				<date>2019-05-20T11:02:31Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Vim.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-05-18T13:22:53Z</date>
+				<date>2019-05-20T11:02:21Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
@@ -514,7 +514,7 @@
 				<key>10.12.0</key>
 				<dict>
 					<key>date</key>
-					<date>2019-03-12T15:39:49Z</date>
+					<date>2019-05-20T11:02:08Z</date>
 				</dict>
 			</dict>
 		</dict>
